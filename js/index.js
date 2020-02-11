@@ -1,4 +1,4 @@
-// Конструкция "switch"
+// switch case
 
 const num = () => {
   const number = 2
@@ -17,6 +17,8 @@ const num = () => {
   }
 }
 
+// num(100)
+
 const string = () => {
   const browser = 'Safari'
 
@@ -34,4 +36,33 @@ const string = () => {
     return console.log('We hope that this page looks ok!')
   }
 }
-window.addEventListener('load', num)
+
+// string(5)
+
+// functions
+
+function checkAge(age) {
+  return age > 18 ? true : console.log('hello')
+}
+
+function checkAge(age) {
+  return age > 18 || console.log('hello')
+}
+
+// checkAge(5)
+
+function min(a, b) {
+  return a < b ? console.log(a) : console.log(b)
+}
+
+// min(2, 5)
+// min(3, -1)
+// min(1, 1)
+
+function pow(number, n) {
+  return console.log(number ** n)
+}
+
+pow(3, 2)
+pow(3, 3)
+pow(1, 100)
