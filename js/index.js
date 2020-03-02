@@ -135,6 +135,44 @@ const multiplyNumeric = menu => {
   }
 }
 
-multiplyNumeric(menu)
+// multiplyNumeric(menu)
 
-console.log(menu)
+// this
+
+const calculator = {
+  read() {
+    this.firstValue = parseInt(prompt('prompt first value', 0))
+    this.secondValue = parseInt(prompt('prompt second value', 0))
+  },
+  sum() {
+    return this.firstValue + this.secondValue
+  },
+  mul() {
+    return this.firstValue * this.secondValue
+  },
+}
+
+// calculator.read()
+// console.log(calculator.sum())
+// console.log(calculator.mul())
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++
+    return this
+  },
+  down() {
+    this.step--
+    return this
+  },
+  showStep: function() {
+    console.log(this.step)
+  },
+}
+
+// ladder
+//   .up()
+//   .up()
+//   .down()
+//   .showStep()
