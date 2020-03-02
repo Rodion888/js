@@ -63,6 +63,78 @@ function pow(number, n) {
   return console.log(number ** n)
 }
 
-pow(3, 2)
-pow(3, 3)
-pow(1, 100)
+// pow(3, 2)
+// pow(3, 3)
+// pow(1, 100)
+
+// arrow functions
+
+const ask = (question, yes, no) => {
+  if (confirm(question)) yes()
+  else no()
+}
+
+// ask(
+//   'Вы согласны?',
+//   () => alert('Вы согласились.'),
+//   () => alert('Вы отменили выполнение.')
+// )
+
+// objects
+
+const user = {}
+user.name = 'John'
+user.surname = 'Smith'
+user.name = 'Pete'
+delete user.name
+
+// console.log({ user })
+
+let schedule = {}
+
+const isEmpty = schedule => {
+  for (let key in schedule) {
+    return false
+  }
+  return true
+}
+
+// console.log(isEmpty(schedule))
+
+schedule['8:30'] = 'get up'
+
+// console.log(isEmpty(schedule))
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+}
+
+const sum = salaries => {
+  let result = 0
+  for (let key in salaries) {
+    result += salaries[key]
+  }
+  return result
+}
+
+// console.log(sum(salaries))
+
+const menu = {
+  width: 200,
+  height: 300,
+  title: 'My menu',
+}
+
+const multiplyNumeric = menu => {
+  for (let key in menu) {
+    if (typeof menu[key] === 'number') {
+      menu[key] *= 2
+    }
+  }
+}
+
+multiplyNumeric(menu)
+
+console.log(menu)
