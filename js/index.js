@@ -176,3 +176,39 @@ let ladder = {
 //   .up()
 //   .down()
 //   .showStep()
+
+// constructors
+
+let constructorCalculator = new Calculator()
+
+function Calculator() {
+  this.read = function() {
+    this.firstValue = parseInt(prompt('prompt first value', 0))
+    this.secondValue = parseInt(prompt('prompt second value', 0))
+  }
+  this.sum = function() {
+    return this.firstValue + this.secondValue
+  }
+  this.mul = function() {
+    return this.firstValue * this.secondValue
+  }
+}
+
+// calculator.read()
+
+// console.log('Sum=' + calculator.sum())
+// console.log('Mul=' + calculator.mul())
+
+let accumulator = new Accumulator(1)
+
+function Accumulator(value) {
+  this.value = value
+  this.read = function() {
+    this.value += +prompt('prompt value', 0)
+  }
+}
+
+// accumulator.read()
+// accumulator.read()
+
+// alert(accumulator.value)
