@@ -212,3 +212,39 @@ function Accumulator(value) {
 // accumulator.read()
 
 // alert(accumulator.value)
+
+// numbers
+
+let sumCalculator = new SumCalculator()
+
+function SumCalculator() {
+  this.read = function() {
+    this.firstValue = prompt('prompt first value', 0)
+    this.secondValue = prompt('prompt second value', 0)
+  }
+  this.sum = function() {
+    return +this.firstValue + +this.secondValue
+  }
+}
+
+// sumCalculator.read()
+
+// console.log('Sum=' + sumCalculator.sum())
+
+let readNumber = new ReadNumber()
+
+function ReadNumber() {
+  this.number = number
+  this.read = function() {
+    number = +prompt('prompt number')
+  }
+  this.checkNumber = function() {
+    console.log(this.number)
+
+    return typeof this.number === 'number' || this.number === null
+      ? this.number
+      : this.read()
+  }
+}
+
+console.log('Number: ' + readNumber.checkNumber())
