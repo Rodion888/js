@@ -231,20 +231,24 @@ function SumCalculator() {
 
 // console.log('Sum=' + sumCalculator.sum())
 
-let readNumber = new ReadNumber()
-
-function ReadNumber() {
-  this.number = number
-  this.read = function() {
-    number = +prompt('prompt number')
-  }
-  this.checkNumber = function() {
-    console.log(this.number)
-
-    return typeof this.number === 'number' || this.number === null
-      ? this.number
-      : this.read()
-  }
+function readNumber() {
+  let num
+  do {
+    num = prompt('type number', 0)
+  } while (!isFinite(num))
+  if (num === null || num === '') return null
+  return +num
 }
 
-console.log('Number: ' + readNumber.checkNumber())
+// console.log(`Число: ${readNumber()}`)
+
+const random = (firstNum, secondNum) =>
+  Math.random() * (secondNum - firstNum) + firstNum
+
+// console.log(random(1, 5))
+
+const randomRounded = (firstNum, secondNum) =>
+  Math.round(Math.random() * (secondNum - firstNum) + firstNum)
+
+// console.log(randomRounded(1, 5))
+
