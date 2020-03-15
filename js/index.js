@@ -252,3 +252,49 @@ const randomRounded = (firstNum, secondNum) =>
 
 // console.log(randomRounded(1, 5))
 
+// Strings
+
+const ucFirst = string => {
+  if (!string) return string
+  return string[0].toUpperCase() + string.slice(1)
+}
+
+// console.log(ucFirst('вася') == 'Вася')
+
+// Напишите функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false.
+// Функция должна быть нечувствительна к регистру:
+
+const checkSpam = string => {
+  const upperStr = string.toUpperCase()
+  if (
+    upperStr.indexOf('viagra'.toUpperCase()) != -1 ||
+    upperStr.indexOf('XXX'.toUpperCase()) != -1
+  )
+    return true
+}
+
+const checkSpamWithIncludes = string => {
+  const lowerStr = string.toLowerCase()
+  if (lowerStr.includes('viagra') || lowerStr.includes('xxx')) return true
+}
+
+// console.log(checkSpam('buy ViAgRA now') == true)
+// console.log(checkSpam('free xxxxx') == true)
+// console.log(checkSpam('innocent rabbit') == false)
+
+// console.log(checkSpamWithIncludes('buy ViAgRA now') == true)
+// console.log(checkSpamWithIncludes('free xxxxx') == true)
+// console.log(checkSpamWithIncludes('innocent rabbit') == false)
+
+const truncate = (string, len) => {
+  if (!string || len === 0) return ''
+  if (len > string.length) return string
+  return string.slice(0, len - 1) + '...'
+}
+
+// console.log(truncate('Вот, что мне хотелось бы сказать на эту тему:', 20))
+// console.log(truncate('Всем привет!', 20))
+
+const extractCurrencyValue = string => +string.slice(1)
+
+console.log(extractCurrencyValue('$120') === 120)
