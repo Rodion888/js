@@ -297,4 +297,41 @@ const truncate = (string, len) => {
 
 const extractCurrencyValue = string => +string.slice(1)
 
-console.log(extractCurrencyValue('$120') === 120)
+// console.log(extractCurrencyValue('$120') === 120)
+
+// Cycles
+
+const showCycleI = () => {
+  for (let i = 2; i <= 10; i++) {
+    if (!(i % 2)) console.log(i)
+  }
+}
+
+// console.log(showCycleI())
+
+const showNumberI = () => {
+  let i = 0
+  while (i < 3) {
+    console.log(`number ${i}!`)
+    i++
+  }
+}
+
+// console.log(showNumberI())
+
+const showLowerCase = () => {
+  while (true) {
+    let value = +prompt('type number greater than 100', 0)
+    if (value && value > 100) break
+  }
+}
+
+// console.log(showLowerCase())
+
+// let n = 10
+// nextPrime: for (let i = 2; i <= n; i++) {
+//   for (let j = 2; j < i; j++) {
+//     if (i % j == 0) continue nextPrime
+//   }
+//   console.log(i)
+// }
