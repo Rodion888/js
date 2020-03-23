@@ -335,3 +335,59 @@ const showLowerCase = () => {
 //   }
 //   console.log(i)
 // }
+
+// Arrays
+
+let styles = ['Джаз', 'Блюз']
+styles.push('Рок-н-ролл')
+styles[Math.floor((styles.length - 1) / 2)] = 'Классика'
+styles.shift()
+styles.unshift('Рэп', 'Регги')
+
+// console.log({ styles })
+
+const sumInput = () => {
+  let arr = []
+  while (true) {
+    const value = prompt('type numeric value', '')
+    if (value === null || isNaN(+value)) break
+    if (typeof +value === 'number') arr.push(+value)
+  }
+  if (arr.length) {
+    let sumValues = 0
+    for (index = 0; index < arr.length; ++index) {
+      sumValues += arr[index]
+    }
+    return sumValues
+  } else return 0
+}
+
+// console.log(sumInput())
+
+// На входе массив чисел, например: arr = [1, -2, 3, 4, -9, 6].
+
+// Задача: найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
+
+// Функция getMaxSubSum(arr) должна возвращать эту сумму.
+
+// Если все элементы отрицательные – ничего не берём(подмассив пустой) и сумма равна «0»:
+
+const arrNumbers = [1, -2, 3, 4, -9, 6]
+// const arrNumbers = [-1, -2, -3]
+
+const getMaxSubSum = arrNumbers => {
+  let sumValues = 0
+  let nextNumberSum = 0
+  for (index = 0; index < arrNumbers.length; ++index) {
+    if (arrNumbers[index] < 0) {
+      return sumValues
+    } else {
+      sumValues += arrNumbers[index]
+      nextNumberSum = sumValues + arrNumbers[index + 1]
+      console.log({ nextNumberSum })
+      console.log({ sumValues })
+    }
+  }
+}
+
+// console.log(getMaxSubSum(arrNumbers))
